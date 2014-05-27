@@ -17,6 +17,7 @@
 switch ($_SERVER['SERVER_NAME']) {
 	case 'localhost':
 	case 'www.latela.ch':
+	case 'latela.ch':
 		$config['base_url']	= 'http://' . $_SERVER['SERVER_NAME'] . '/gruenetatze';
 		break;
 	case 'dev.gruenetatze.ch':
@@ -43,6 +44,7 @@ switch ($_SERVER['SERVER_NAME']) {
 switch ($_SERVER['SERVER_NAME']) {
 	case 'localhost':
 	case 'www.latela.ch':
+	case 'latela.ch':
 		$config['index_page'] = 'index.php';
 		break;
 	case 'dev.gruenetatze.ch':
@@ -215,6 +217,7 @@ switch ($_SERVER['SERVER_NAME']) {
 	case 'gruenetatze.ch':
 	case 'www.gruenetatze.ch':
 	case 'www.latela.ch':
+	case 'latela.ch':
 	default:
 		$config['log_threshold'] = 1;
 }
