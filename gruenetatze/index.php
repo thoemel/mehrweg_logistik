@@ -1,5 +1,10 @@
 <?php
- 
+/**
+ * Hack, weil CodeIgniter das nicht selbst macht.
+ */
+date_default_timezone_set('Europe/Zurich');
+
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -26,6 +31,8 @@ switch ($_SERVER['SERVER_NAME']) {
 		break;
 	case 'www.gruenetatze.ch':
 	case 'gruenetatze.ch':
+	case 'www.latela.ch':
+	case 'latela.ch':
 	default:
 		define('ENVIRONMENT', 'production');
 }
