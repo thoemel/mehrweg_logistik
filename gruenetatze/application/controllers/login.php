@@ -98,7 +98,7 @@ class Login extends MY_Controller {
 	 */
 	public function save()
 	{
-		$this->form_validation->set_rules('username', 'E-Mail', 'trim|required|valid_email');
+		$this->form_validation->set_rules('username', 'E-Mail', 'trim|required');
 		$this->form_validation->set_rules('password', 'Passwort', 'trim|required|min_length[8]');
 		
 		if (false === $this->form_validation->run()) {

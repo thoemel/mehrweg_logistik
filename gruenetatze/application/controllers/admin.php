@@ -155,10 +155,11 @@ class Admin extends MY_Controller
 			return;
 		}
 		$this->session->set_userdata('user_id', $newUser->id);
-		$this->session->set_userdata('user_role', $newUser->type);
+		$this->session->set_userdata('user_role', $newUser->role);
 		$this->session->set_userdata('user_email', $newUser->email);
 		$this->session->set_userdata('rolle_id', $newUser->rolle_id);
 		$this->session->set_userdata('firma_id', $newUser->firma_id);
+		$this->session->set_userdata('firma_name', $newUser->firma_name);
 		$this->session->set_userdata('logged_in', true);
 		
 		$this->session->set_flashdata('success', 'Eingeloggt als ' . $newUser->email);

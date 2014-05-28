@@ -155,7 +155,26 @@ class Pl extends MY_Controller {
 	 */
 	public function rechnung_neue_periode()
 	{
-		// Formular validieren
+		// Formulardaten validieren
+		$config = array(
+				array(
+						'field'   => 'firma_id',
+						'label'   => 'Firma',
+						'rules'   => 'is_natural|required'
+				),
+				array(
+						'field'   => 'datum_bis',
+						'label'   => 'Bis-Datum',
+						'rules'   => 'is_natural1|required'
+				),
+		);
+		$this->form_validation->set_rules($config);
+		if (false === $this->form_validation->run()) {
+			$this->session->set_flashdata('error', validation_errors());
+			redirect('pl/rechnung_stellen');
+			return ;
+		}
+		
 		$firma_id = $this->input->post('firma_id');
 		$datum_bis = $this->input->post('datum_bis');
 		
@@ -176,16 +195,6 @@ class Pl extends MY_Controller {
 		$this->addData('firmen', Firma::getAll(2));
 		$this->load->view('pl/rechnung_liste', $this->data);
 		return ;
-	}
-	
-	
-	/**
-	 * Zeige eine Übersicht der Rechnungen dieser Firma
-	 * @param number $firma_id
-	 */
-	public function rechnung_firma_uebersicht($firma_id = 0)
-	{
-		return;
 	}
 	
 	

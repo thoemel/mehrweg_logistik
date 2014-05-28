@@ -10,8 +10,13 @@ $(document).ready(function () {
     });
  });
 
- // Umrechnung der X, Y Position im Bezug zum Bildschirm auf Koordinaten innerhalb des Canvas-Containers
- function getPosition(mouseEvent, signatureCanvas) {
+ /**
+  * Umrechnung der X, Y Position im Bezug zum Bildschirm auf Koordinaten innerhalb des Canvas-Containers
+  * @param mouseEvent		Der auslösende Event
+  * @param signatureCanvas	Das Canvas Element
+  * @returns {x,y}
+  */
+function getPosition(mouseEvent, signatureCanvas) {
     var x, y;
     if (mouseEvent.pageX != undefined && mouseEvent.pageY != undefined) {
        x = mouseEvent.pageX;
@@ -24,7 +29,7 @@ $(document).ready(function () {
     return { X: x - signatureCanvas.offsetLeft, Y: y - signatureCanvas.offsetTop };
  }
 
- function initialize() {
+function initialize() {
    // initialisieren des Canvaselements
     var signatureCanvas = document.getElementById("unterschrift");
     var context = signatureCanvas.getContext("2d");
@@ -92,8 +97,7 @@ $(document).ready(function () {
        signatureCanvas.addEventListener('touchmove', function (event) {
           event.preventDefault();
        }, false); 
-    }
-    else {
+    } else {
        // Fallback für Desktops - Zeichnen mit der Maus erlauben
        // Start der Zeichnung mit dem Event mousedown 
        

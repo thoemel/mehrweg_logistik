@@ -17,8 +17,11 @@ echo '
 <script src="' . base_url() . 'js/vendor/jquery-ui-1.10.4.min.js"></script>
 <script src="' . base_url() . 'js/vendor/bootstrap.js"></script>
 		
-<script src="' . base_url() . 'js/main.js"></script>
-<script src="' . base_url() . 'js/unterschrift.js"></script>';
+<script src="' . base_url() . 'js/main.js"></script>';
+
+if (!empty($additionalJS)) {
+	echo $additionalJS;
+}
 ?>
 
 </body>

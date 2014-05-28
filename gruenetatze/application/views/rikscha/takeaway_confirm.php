@@ -75,18 +75,7 @@ echo form_hidden('tk_defekt', $tk_defekt);
 echo form_hidden('depotkarten_holt', $depotkarten_holt);
 echo '<input type="hidden" name="unterschrift" id="hidden_unterschrift">';
 echo '
-	<div class="form-group">
-		<div class="col-lg-offset-2 col-lg-10">
-			<div class="checkbox">
-				<label>
-					' . form_checkbox('bestaetigung', '1', false) . '
-					Ja, diese Angaben stimmen.
-				</label>
-			</div>
-		</div>
-	</div>
 	<div class="row">
-		<span class="alert alert-warning">Hier fehlt noch die Unterschrift!</span>
 		<canvas id="unterschrift" class="unterschrift"></canvas>
 	</div>
 	<div class="form-group">

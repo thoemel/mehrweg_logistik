@@ -106,7 +106,32 @@ class Rikscha extends MY_Controller {
 		$rikscha_id = $this->session->userdata('firma_id');
 		$lager_id = 5; // Wird sich nicht ändern, solange wir nur ein Lager haben.
 		
-		// TODO Formular prüfen
+		// Formulardaten validieren
+		$fv = array(
+				array(
+						'field'   => 'tk',
+						'label'   => 'Transportkisten',
+						'rules'   => 'is_natural'
+				),
+				array(
+						'field'   => 'bbb',
+						'label'   => 'Bring Back Boxen',
+						'rules'   => 'is_natural'
+				),
+				array(
+						'field'   => 'depotkarten',
+						'label'   => 'Depotkarten',
+						'rules'   => 'is_natural'
+				),
+		);
+		
+		$this->form_validation->set_rules($fv);
+		if (false === $this->form_validation->run()) {
+			$this->session->set_flashdata('error', validation_errors());
+			redirect('rikscha/lager_checkout');
+			return ;
+		}
+		
 		$tk = $this->input->post('tk');
 		$bbb = $this->input->post('bbb');
 		$depotkarten = $this->input->post('depotkarten');
@@ -124,7 +149,7 @@ class Rikscha extends MY_Controller {
 
 		if (!$ret) {
 			$this->session->set_flashdata('error', 'Aus dem Lager genommene Ware wurde nicht richtig gespeichert.');
-			redirect('rikscha/lager_checkin');
+			redirect('rikscha/lager_checkout');
 			return;
 		}
 		
@@ -240,6 +265,7 @@ class Rikscha extends MY_Controller {
 		$this->addData('bbb_defekt_ohne_depot', $bbb_defekt_ohne_depot);
 		$this->addData('tk_defekt', $tk_defekt);
 		$this->addData('depotkarten_holt', $depotkarten_holt);
+		$this->addData('additionalJS', '<script src="' . base_url() . 'js/unterschrift.js"></script>');
 		$this->load->view('rikscha/takeaway_confirm', $this->data);
 		
 		return;
@@ -302,11 +328,6 @@ class Rikscha extends MY_Controller {
 						'field'   => 'depotkarten_holt',
 						'label'   => 'Depotkarten',
 						'rules'   => 'is_natural'
-				),
-				array(
-						'field'   => 'bestaetigung',
-						'label'   => 'Bestätigung',
-						'rules'   => 'required|is_natural'
 				),
 				array(
 						'field'   => 'unterschrift',
