@@ -33,7 +33,7 @@ echo '
 		</div>
 	</div>
 					
-	<h2>Rikscha gibt</h2>
+	<h2>Grüne Tatze gibt</h2>
 	<div class="form-group">
 		<label for="tk_dreckig_ganz" class="col-sm-5 control-label">Transportkisten gebraucht</label>
 		<div class="col-sm-2">
