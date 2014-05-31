@@ -59,9 +59,6 @@ echo '
 			</div>
 		</div>
 	</div>
-	<div class="row btn btn-warning">
-		Hier fehlt noch die Unterschrift!
-	</div>
 	<div class="form-group">
 		<div class="col-lg-offset-2 col-lg-10">
 			<button type="submit" class="btn btn-default">Bestätigen</button>
