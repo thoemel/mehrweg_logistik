@@ -431,6 +431,7 @@ class Rikscha extends MY_Controller {
 		}
 		$mwl_dropdown = form_dropdown('mwl_id', $options);
 		$this->addData('mwl_dropdown', $mwl_dropdown);
+		$this->addData('mw_logistiker', $options);
 		
 		// TK gebraucht und BBB gebraucht vor-ausfüllen
 		$bestand = Bestand::fuer_firma($lager_id);

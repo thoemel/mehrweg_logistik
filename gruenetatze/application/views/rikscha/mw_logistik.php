@@ -11,14 +11,20 @@ echo form_open_multipart('rikscha/mw_logistik_confirm',
 		array('id' => 'rikscha_mw_logistik', 
 				'role' => 'form', 
 				'class' => 'form-horizontal'));
-
-echo '
+if (1 == count($mw_logistiker)) {
+	// Wäscherei hardcoded, solange wir nur eine haben
+	echo form_hidden('mwl_id', 6);
+} else {
+	// Dropdown, sobald mehrere Wäschereien
+	echo '
 	<div class="form-group">
 		<label for="ta_id" class="col-sm-5 control-label">MW-Logistik Unternehmen</label>
 		<div class="col-sm-6 col-md-4 col-lg-4">
 			' . $mwl_dropdown . '
 		</div>
-	</div>
+	</div>';
+}
+echo '
 	<h2>MW-Logistik bringt</h2>
 	<div class="form-group">
 		<label for="tk_sauber_bringt" class="col-sm-5 control-label">Transportkisten sauber</label>
