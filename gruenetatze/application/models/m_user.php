@@ -116,9 +116,8 @@ class M_user extends CI_Model {
 	public static function roles()
 	{
 		return array(
-				'provelo'		=> 'Pro Velo',
-				'superadmin'	=> 'Superadmin',
-				'haendler'		=> 'Händler');
+				'normalo'		=> 'Normalo',
+				'superadmin'	=> 'Superadmin');
 	}
 	
 	
