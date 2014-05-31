@@ -69,6 +69,7 @@ footer {
 
 
 .unterschrift {
+	/* Width und height müssen mit den Werten im html übereinstimmen! */
 	width: 600px;
 	height: 200px;
 	border: 1px solid #333;

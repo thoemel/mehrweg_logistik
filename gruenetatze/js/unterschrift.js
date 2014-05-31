@@ -1,12 +1,22 @@
 /**
  * Digitale Unterschrift
  */
+
+// Das Canvas Element
+var signatureCanvas = document.getElementById("unterschrift");
+
 $(document).ready(function () {
     initialize();
     
+    // Formular mit Unterschrift wird abgeschickt
     $(".mit_unterschrift").on('click', function() {
     	var image = document.getElementById("unterschrift").toDataURL("image/png");
     	$("#hidden_unterschrift").val(image);
+    });
+    
+    // Unterschrift Canvas leeren
+    $(".clearCanvas").on('click', function() {
+    	signatureCanvas.width = signatureCanvas.width;
     });
  });
 
@@ -31,7 +41,7 @@ function getPosition(mouseEvent, signatureCanvas) {
 
 function initialize() {
    // initialisieren des Canvaselements
-    var signatureCanvas = document.getElementById("unterschrift");
+    
     var context = signatureCanvas.getContext("2d");
     context.strokeStyle = 'Black';   // Linienfarbe - Schwarz
 
