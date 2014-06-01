@@ -27,7 +27,7 @@ class Rechnung extends CI_Model {
 	
 	/**
 	 * Mapping zwischen den ware_id der Datenbank und der Klassenvariablen
-	 * @var unknown
+	 * @var array($ware_id => $attribute_name)
 	 */
 	private $ware_attribute_map = array(
 		1 => 'tk_hin',
@@ -253,8 +253,10 @@ class Rechnung extends CI_Model {
 		
 		$map = $this->ware_attribute_map;
 		foreach ($mods as $row) {
-			$attrName = $map[$row->ware_id];
-			$this->$attrName = $row->summe;
+			if (isset($map[$row['ware_id']])) {
+				$attrName = $map[$row['ware_id']];
+				$this->$attrName = $row['summe'];
+			}
 		}
 		
 		// Saldo berechnen
@@ -263,7 +265,7 @@ class Rechnung extends CI_Model {
 		$this->speichere();
 		
 		return;
-	}
+	} // End of function init()
 	
 	
 	/**

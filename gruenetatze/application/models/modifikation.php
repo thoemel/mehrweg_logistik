@@ -65,7 +65,7 @@ class Modifikation extends CI_Model {
 	 * @param int		$firma_id
 	 * @param String	$datum_von
 	 * @param String	$datum_bis
-	 * @return Query Result mit ware_id und Summe der Anzahl
+	 * @return array(array('ware_id' => $ware_id, 'summe' => $summe))
 	 */
 	public static function summe_fuer_rechnung($firma_id, $datum_von, $datum_bis)
 	{
@@ -99,7 +99,12 @@ class Modifikation extends CI_Model {
 			if (substr($row->zeitpunkt, 0, 10) == $datum_bis && $row->firma_id_zu == $firma_id) {
 				continue;
 			}
-			$sums[$row->ware_id] += $row->anzahl;
+			if (isset($sums[$row->ware_id])) {
+				$sums[$row->ware_id] += $row->anzahl;
+			} else {
+				$sums[$row->ware_id] = $row->anzahl;
+			}
+			
 		}
 		foreach ($sums as $ware_id => $summe) {
 			$arr_out[] = array('ware_id' => $ware_id, 'summe' => $summe);
