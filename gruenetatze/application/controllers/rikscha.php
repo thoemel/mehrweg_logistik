@@ -567,6 +567,22 @@ class Rikscha extends MY_Controller {
 		$tk_gebraucht_ganz = $this->input->post('tk_gebraucht_ganz');
 		$bbb_gebraucht_ganz = $this->input->post('bbb_gebraucht_ganz');
 		
+
+		// Das gebrauchte Geschirr bei der MW-Logistik waschen
+		$best = Bestand::fuer_firma($mwl_id);
+		foreach ($best as $row) {
+			if (3 == $row->ware_id) {
+				// TK gebraucht -> TK sauber
+				$ret = $ret && Bestand::aendere($mwl_id, 3, (-1 * $row->anzahl));
+				$ret = $ret && Bestand::aendere($mwl_id, 1, $row->anzahl);
+			}
+			if (4 == $row->ware_id) {
+				// BBB gebraucht -> BBB sauber
+				$ret = $ret && Bestand::aendere($mwl_id, 4, (-1 * $row->anzahl));
+				$ret = $ret && Bestand::aendere($mwl_id, 2, $row->anzahl);
+			}
+		}
+		
 		// Modifikationen (Bestand wird von der Modifikation erledigt)
 		if ($tk_sauber_bringt) {
 			$ret = $ret && Modifikation::speichere(1, $mwl_id, $lager_id, $tk_sauber_bringt);
