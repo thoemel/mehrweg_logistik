@@ -20,34 +20,19 @@ echo '
 	</thead>
 	<tbody>
 		<tr>
-			<th scope="row">TK sauber</th>
-			<td>' . $ware['TK sauber']['Takeaway'] . '</td>
-			<td>' . $ware['TK sauber']['MW-Logistik'] . '</td>
-			<td>' . $ware['TK sauber']['Lager'] . '</td>
-			<td>' . $ware['TK sauber']['Rikscha'] . '</td>
+			<th scope="row">Transportkisten</th>
+			<td>' . $ware['TK']['Takeaway'] . '</td>
+			<td>' . $ware['TK']['MW-Logistik'] . '</td>
+			<td>' . $ware['TK']['Lager'] . '</td>
+			<td>' . $ware['TK']['Rikscha'] . '</td>
 		</tr>
 		<tr>
-			<th scope="row">BBB sauber</th>
-			<td>' . $ware['BBB sauber']['Takeaway'] . '</td>
-			<td>' . $ware['BBB sauber']['MW-Logistik'] . '</td>
-			<td>' . $ware['BBB sauber']['Lager'] . '</td>
-			<td>' . $ware['BBB sauber']['Rikscha'] . '</td>
+			<th scope="row">Bring Back Boxen</th>
+			<td>' . $ware['BBB']['Takeaway'] . '</td>
+			<td>' . $ware['BBB']['MW-Logistik'] . '</td>
+			<td>' . $ware['BBB']['Lager'] . '</td>
+			<td>' . $ware['BBB']['Rikscha'] . '</td>
 		</tr>
-		<tr>
-			<th scope="row">TK gebraucht</th>
-			<td>' . $ware['TK gebraucht']['Takeaway'] . '</td>
-			<td>' . $ware['TK gebraucht']['MW-Logistik'] . '</td>
-			<td>' . $ware['TK gebraucht']['Lager'] . '</td>
-			<td>' . $ware['TK gebraucht']['Rikscha'] . '</td>
-		</tr>
-		<tr>
-			<th scope="row">BBB gebraucht</th>
-			<td>' . $ware['BBB gebraucht']['Takeaway'] . '</td>
-			<td>' . $ware['BBB gebraucht']['MW-Logistik'] . '</td>
-			<td>' . $ware['BBB gebraucht']['Lager'] . '</td>
-			<td>' . $ware['BBB gebraucht']['Rikscha'] . '</td>
-		</tr>
-		<tr>
 			<th scope="row">Depotkarten</th>
 			<td>' . $ware['Depotkarte']['Takeaway'] . '</td>
 			<td>' . $ware['Depotkarte']['MW-Logistik'] . '</td>

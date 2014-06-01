@@ -70,13 +70,25 @@ class Bestand extends CI_Model {
 	
 	/**
 	 * Zeige den Bestand aller Waren für das ganze System
-	 * @return stdClass			Entweder leer oder $query->result()
+	 * Es wird dabei nicht nach sauber und gebraucht unterschieden, sondern 
+	 * es werden TK und BBB gemischt angegeben.
+	 * Defekte Ware wird nicht beachtet.
+	 * @return array(warenname als Key, darin array mit Rollenname als Key)
 	 */
 	public static function gesamt()
 	{
-		$ret = new stdClass();
 		$CI =& get_instance();
-	
+		$rollen = array(
+						'Takeaway'		=> 0,
+						'MW-Logistik'	=> 0,
+						'Lager'			=> 0,
+						'Rikscha'		=> 0
+				);
+		$ware = array(
+				'TK' => $rollen,
+				'BBB' => $rollen,
+				'Depotkarte' => $rollen,
+		);
 		$sql = 'SELECT	ware.name as ware, rolle.name as rolle, sum(bestand.anzahl) as anzahl 
 				FROM	bestand
 				INNER JOIN firma ON bestand.firma_id = firma.firma_id
@@ -84,11 +96,31 @@ class Bestand extends CI_Model {
 				INNER JOIN ware ON bestand.ware_id = ware.ware_id
 				GROUP BY ware.ware_id, rolle.rolle_id';
 		$query = $CI->db->query($sql);
-		if (0 < $query->num_rows()) {
-			$ret = $query->result();
+		if (0 == $query->num_rows()) {
+			return $ware;
+		}
+		foreach ($query->result() as $row) {
+			if (!in_array($row->rolle, array_keys($rollen))) {
+				continue;
+			}
+			switch ($row->ware) {
+				case 'TK sauber':
+				case 'TK gebraucht':
+					$ware['TK'][$row->rolle] += $row->anzahl;
+					break;
+				case 'BBB sauber':
+				case 'BBB gebraucht':
+					$ware['BBB'][$row->rolle] += $row->anzahl;
+					break;
+				case 'Depotkarte':
+					$ware['Depotkarte'][$row->rolle] += $row->anzahl;
+					break;
+				default:
+					show_error('Bestand::gesamt() - nicht vorgesehene Ware');
+			}
 		}
 	
-		return $ret;
+		return $ware;
 	}
 	
 	

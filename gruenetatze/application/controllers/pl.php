@@ -203,41 +203,7 @@ class Pl extends MY_Controller {
 	 */
 	public function wo_ist_die_ware()
 	{
-		// Default-Werte für Tabelle
-		$ware = array(
-			'TK sauber' => array(
-				'Takeaway'		=> '-',
-				'MW-Logistik'	=> '-',
-				'Lager'			=> '-'
-			),
-			'BBB sauber' => array(
-				'Takeaway'		=> '-',
-				'MW-Logistik'	=> '-',
-				'Lager'			=> '-'
-			),
-			'TK gebraucht' => array(
-				'Takeaway'		=> '-',
-				'MW-Logistik'	=> '-',
-				'Lager'			=> '-'
-			),
-			'BBB gebraucht' => array(
-				'Takeaway'		=> '-',
-				'MW-Logistik'	=> '-',
-				'Lager'			=> '-'
-			),
-			'Depotkarte' => array(
-				'Takeaway'		=> '-',
-				'MW-Logistik'	=> '-',
-				'Lager'			=> '-'
-			),
-		);
-		
-		// Mit Werten füllen
-		foreach (Bestand::gesamt() as $obj) {
-			$ware[$obj->ware][$obj->rolle] = $obj->anzahl;
-		}
-		
-		$this->addData('ware', $ware);
+		$this->addData('ware', Bestand::gesamt());
 		$this->load->view('pl/wo_ist_die_ware', $this->data);
 	}
 	
