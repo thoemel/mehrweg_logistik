@@ -62,25 +62,4 @@ class Ware extends CI_Model {
 	} // End of function getAll()
 	
 	
-	
-	/**
-	 * Gib die Rechnung für ein bestimmtes Datum
-	 * @param String $datum_bis		Y-m-d
-	 * @return Rechnung	Rechnungs-Objekt
-	 */
-	public function getRechnung($datum_bis = '')
-	{
-		$this->load->model('rechnung');
-		$rechnung = new Rechnung();
-		if (empty($datum_bis)) {
-			$datum_bis = Rechnung::datum_letzte_fuer_firma($this->id);
-		}
-		if (empty($datum_bis)) {
-			return $rechnung;
-		}
-		$rechnung->init($this->id, $datum_bis);
-		return $rechnung;
-	}
-	
-	
 }
