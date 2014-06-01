@@ -165,7 +165,7 @@ class Pl extends MY_Controller {
 				array(
 						'field'   => 'datum_bis',
 						'label'   => 'Bis-Datum',
-						'rules'   => 'is_natural1|required'
+						'rules'   => 'required'
 				),
 		);
 		$this->form_validation->set_rules($config);
