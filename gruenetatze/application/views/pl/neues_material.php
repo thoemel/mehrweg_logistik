@@ -25,19 +25,34 @@ echo '
 	<div class="form-group">
 		<label for="tk" class="col-xs-4 control-label">Transportkisten</label>
 		<div class="col-xs-2">
-			' . form_input(array('id' => 'tk', 'name' => 'tk', 'value' => '', 'class' => 'focusPlease form-control')) . '
+			' . form_input(array(
+					'id' => 'tk', 
+					'name' => 'tk', 
+					'value' => '', 
+					'class' => 'focusPlease form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="bbb" class="col-xs-4 control-label">Bring Back Boxen</label>
 		<div class="col-xs-2">
-			' . form_input(array('id' => 'bbb', 'name' => 'bbb', 'value' => '', 'class' => 'form-control')) . '
+			' . form_input(array(
+					'id' => 'bbb', 
+					'name' => 'bbb', 
+					'value' => '', 
+					'class' => 'form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="depotkarten" class="col-xs-4 control-label">Depotkarten</label>
 		<div class="col-xs-2">
-			' . form_input(array('id' => 'depotkarten', 'name' => 'depotkarten', 'value' => '', 'class' => 'form-control')) . '
+			' . form_input(array(
+					'id' => 'depotkarten', 
+					'name' => 'depotkarten', 
+					'value' => '', 
+					'class' => 'form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">

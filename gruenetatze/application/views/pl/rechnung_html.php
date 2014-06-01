@@ -22,13 +22,22 @@ echo '
 	<div class="form-group">
 		<label for="datum_von" class="col-sm-2 control-label hat-dp">Datum von</label>
 		<div class="col-sm-4">
-			' . form_input(array('id' => 'datum_von', 'name' => 'datum_von', 'value' => $letzte_rechnung_datum_bis, 'class' => 'form-control', 'disabled' => 'disabled')) . '
+			' . form_input(array(
+					'id' => 'datum_von', 
+					'name' => 'datum_von', 
+					'value' => $letzte_rechnung_datum_bis, 
+					'class' => 'form-control', 
+					'disabled' => 'disabled')) . '
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="datum_bis" class="col-sm-2 control-label">Datum bis</label>
 		<div class="col-sm-4">
-			' . form_input(array('id' => 'datum_bis', 'name' => 'datum_bis', 'value' => set_value('datum_bis'), 'class' => 'form-control hat-dp')) . '
+			' . form_input(array(
+					'id' => 'datum_bis', 
+					'name' => 'datum_bis', 
+					'value' => set_value('datum_bis'), 
+					'class' => 'form-control hat-dp')) . '
 		</div>
 	</div>
 

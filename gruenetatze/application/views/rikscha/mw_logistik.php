@@ -29,13 +29,23 @@ echo '
 	<div class="form-group">
 		<label for="tk_sauber_bringt" class="col-sm-5 control-label">Transportkisten sauber</label>
 		<div class="col-sm-2">
-			' . form_input(array('id' => 'tk_sauber_bringt', 'name' => 'tk_sauber_bringt', 'value' => set_value('tk_sauber_bringt'), 'class' => 'focusPlease form-control')) . '
+			' . form_input(array(
+					'id' => 'tk_sauber_bringt', 
+					'name' => 'tk_sauber_bringt', 
+					'value' => set_value('tk_sauber_bringt'), 
+					'class' => 'focusPlease form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="bbb_sauber_bringt" class="col-sm-5 control-label">Bring-Back-Boxen sauber</label>
 		<div class="col-sm-2">
-			' . form_input(array('id' => 'bbb_sauber_bringt', 'name' => 'bbb_sauber_bringt', 'value' => set_value('bbb_sauber_bringt'), 'class' => 'form-control')) . '
+			' . form_input(array(
+					'id' => 'bbb_sauber_bringt', 
+					'name' => 'bbb_sauber_bringt', 
+					'value' => set_value('bbb_sauber_bringt'), 
+					'class' => 'form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 					
@@ -43,13 +53,23 @@ echo '
 	<div class="form-group">
 		<label for="tk_dreckig_ganz" class="col-sm-5 control-label">Transportkisten gebraucht</label>
 		<div class="col-sm-2">
-			' . form_input(array('id' => 'tk_dreckig_ganz', 'name' => 'tk_dreckig_ganz', 'value' => $tk_dreckig_ganz, 'class' => 'form-control')) . '
+			' . form_input(array(
+					'id' => 'tk_dreckig_ganz', 
+					'name' => 'tk_dreckig_ganz', 
+					'value' => $tk_dreckig_ganz, 
+					'class' => 'form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">
 		<label for="bbb_dreckig_ganz" class="col-sm-5 control-label">Bring-Back-Boxen gebraucht</label>
 		<div class="col-sm-2">
-			' . form_input(array('id' => 'bbb_dreckig_ganz', 'name' => 'bbb_dreckig_ganz', 'value' => $bbb_dreckig_ganz, 'class' => 'form-control')) . '
+			' . form_input(array(
+					'id' => 'bbb_dreckig_ganz', 
+					'name' => 'bbb_dreckig_ganz', 
+					'value' => $bbb_dreckig_ganz, 
+					'class' => 'form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 
