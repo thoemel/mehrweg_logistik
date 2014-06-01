@@ -27,11 +27,11 @@ echo '
 		<h2>Grüne Tatze holt</h2>
 		<ul class="list-group">
 			<li class="list-group-item">
-				<span class="badge">' . $tk_dreckig_ganz . '</span>
+				<span class="badge">' . $tk_gebraucht_ganz . '</span>
 				Transportkisten gebraucht
 			</li>
 			<li class="list-group-item">
-				<span class="badge">' . $bbb_dreckig_ganz . '</span>
+				<span class="badge">' . $bbb_gebraucht_ganz . '</span>
 				Bring Back Boxen gebraucht
 			</li>
 			<li class="list-group-item">
@@ -67,8 +67,8 @@ echo form_hidden('ta_id', $ta->id);
 echo form_hidden('tk_sauber_bringt', $tk_sauber_bringt);
 echo form_hidden('bbb_sauber_bringt', $bbb_sauber_bringt);
 echo form_hidden('depotkarten_bringt', $depotkarten_bringt);
-echo form_hidden('tk_dreckig_ganz', $tk_dreckig_ganz);
-echo form_hidden('bbb_dreckig_ganz', $bbb_dreckig_ganz);
+echo form_hidden('tk_gebraucht_ganz', $tk_gebraucht_ganz);
+echo form_hidden('bbb_gebraucht_ganz', $bbb_gebraucht_ganz);
 echo form_hidden('bbb_defekt_mit_depot', $bbb_defekt_mit_depot);
 echo form_hidden('bbb_defekt_ohne_depot', $bbb_defekt_ohne_depot);
 echo form_hidden('tk_defekt', $tk_defekt);

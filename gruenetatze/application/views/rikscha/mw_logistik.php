@@ -51,23 +51,23 @@ echo '
 					
 	<h2>Grüne Tatze gibt</h2>
 	<div class="form-group">
-		<label for="tk_dreckig_ganz" class="col-sm-5 control-label">Transportkisten gebraucht</label>
+		<label for="tk_gebraucht_ganz" class="col-sm-5 control-label">Transportkisten gebraucht</label>
 		<div class="col-sm-2">
 			' . form_input(array(
-					'id' => 'tk_dreckig_ganz', 
-					'name' => 'tk_dreckig_ganz', 
-					'value' => $tk_dreckig_ganz, 
+					'id' => 'tk_gebraucht_ganz', 
+					'name' => 'tk_gebraucht_ganz', 
+					'value' => $tk_gebraucht_ganz, 
 					'class' => 'form-control', 
 					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="bbb_dreckig_ganz" class="col-sm-5 control-label">Bring-Back-Boxen gebraucht</label>
+		<label for="bbb_gebraucht_ganz" class="col-sm-5 control-label">Bring-Back-Boxen gebraucht</label>
 		<div class="col-sm-2">
 			' . form_input(array(
-					'id' => 'bbb_dreckig_ganz', 
-					'name' => 'bbb_dreckig_ganz', 
-					'value' => $bbb_dreckig_ganz, 
+					'id' => 'bbb_gebraucht_ganz', 
+					'name' => 'bbb_gebraucht_ganz', 
+					'value' => $bbb_gebraucht_ganz, 
 					'class' => 'form-control', 
 					'type' => 'number')) . '
 		</div>

@@ -11,7 +11,7 @@ echo '
  * Neue Rechnung erstellen
  */
 echo '
-<div>
+<div class="row">
 	<h2>Neue Rechnung erfassen</h2>
 </div>
 ' . form_open_multipart('pl/rechnung_neue_periode', 
@@ -74,7 +74,8 @@ if (!empty($abrechnung_ids)) {
 
 if (!empty($abrechnung_ids)) {
 	echo '
-		<a name="details"></a>
+	<a name="details"></a>
+	<div class="row">
 		<h2>
 			Periode: Von ' . (strftime('%d. %B %Y', strtotime($rechnung->datum_von))) . ' bis ' . (strftime('%d. %B %Y', strtotime($rechnung->datum_bis))) . '
 		</h2>
@@ -167,7 +168,8 @@ if (!empty($abrechnung_ids)) {
 	}
 	echo '
 		</tbody>
-		</table>';
+		</table>
+	</div>';
 	
 } // End if Rechnung
 

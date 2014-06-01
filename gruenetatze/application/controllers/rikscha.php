@@ -207,7 +207,7 @@ class Rikscha extends MY_Controller {
 						'rules'   => 'is_natural'
 				),
 				array(
-						'field'   => 'tk_dreckig_ganz',
+						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
 						'rules'   => 'is_natural'
 				),
@@ -244,8 +244,8 @@ class Rikscha extends MY_Controller {
 		$tk_sauber_bringt = $this->input->post('tk_sauber_bringt');
 		$bbb_sauber_bringt = $this->input->post('bbb_sauber_bringt');
 		$depotkarten_bringt = $this->input->post('depotkarten_bringt');
-		$tk_dreckig_ganz = $this->input->post('tk_dreckig_ganz');
-		$bbb_dreckig_ganz = $this->input->post('bbb_dreckig_ganz');
+		$tk_gebraucht_ganz = $this->input->post('tk_gebraucht_ganz');
+		$bbb_gebraucht_ganz = $this->input->post('bbb_gebraucht_ganz');
 		$bbb_defekt_mit_depot = $this->input->post('bbb_defekt_mit_depot');
 		$bbb_defekt_ohne_depot = $this->input->post('bbb_defekt_ohne_depot');
 		$tk_defekt = $this->input->post('tk_defekt');
@@ -259,8 +259,8 @@ class Rikscha extends MY_Controller {
 		$this->addData('tk_sauber_bringt', $tk_sauber_bringt);
 		$this->addData('bbb_sauber_bringt', $bbb_sauber_bringt);
 		$this->addData('depotkarten_bringt', $depotkarten_bringt);
-		$this->addData('tk_dreckig_ganz', $tk_dreckig_ganz);
-		$this->addData('bbb_dreckig_ganz', $bbb_dreckig_ganz);
+		$this->addData('tk_gebraucht_ganz', $tk_gebraucht_ganz);
+		$this->addData('bbb_gebraucht_ganz', $bbb_gebraucht_ganz);
 		$this->addData('bbb_defekt_mit_depot', $bbb_defekt_mit_depot);
 		$this->addData('bbb_defekt_ohne_depot', $bbb_defekt_ohne_depot);
 		$this->addData('tk_defekt', $tk_defekt);
@@ -305,7 +305,7 @@ class Rikscha extends MY_Controller {
 						'rules'   => 'is_natural'
 				),
 				array(
-						'field'   => 'tk_dreckig_ganz',
+						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
 						'rules'   => 'is_natural'
 				),
@@ -347,8 +347,8 @@ class Rikscha extends MY_Controller {
 		$tk_sauber_bringt = $this->input->post('tk_sauber_bringt');
 		$bbb_sauber_bringt = $this->input->post('bbb_sauber_bringt');
 		$depotkarten_bringt = $this->input->post('depotkarten_bringt');
-		$tk_dreckig_ganz = $this->input->post('tk_dreckig_ganz');
-		$bbb_dreckig_ganz = $this->input->post('bbb_dreckig_ganz');
+		$tk_gebraucht_ganz = $this->input->post('tk_gebraucht_ganz');
+		$bbb_gebraucht_ganz = $this->input->post('bbb_gebraucht_ganz');
 		$bbb_defekt_mit_depot = $this->input->post('bbb_defekt_mit_depot');
 		$bbb_defekt_ohne_depot = $this->input->post('bbb_defekt_ohne_depot');
 		$tk_defekt = $this->input->post('tk_defekt');
@@ -384,11 +384,11 @@ class Rikscha extends MY_Controller {
 		if ($depotkarten_bringt) {
 			$ret = $ret && Modifikation::speichere(8, $rikscha_id, $ta_id, $depotkarten_bringt);
 		}
-		if ($tk_dreckig_ganz) {
-			$ret = $ret && Modifikation::speichere(3, $ta_id, $rikscha_id, $tk_dreckig_ganz);
+		if ($tk_gebraucht_ganz) {
+			$ret = $ret && Modifikation::speichere(3, $ta_id, $rikscha_id, $tk_gebraucht_ganz);
 		}
-		if ($bbb_dreckig_ganz) {
-			$ret = $ret && Modifikation::speichere(4, $ta_id, $rikscha_id, $bbb_dreckig_ganz);
+		if ($bbb_gebraucht_ganz) {
+			$ret = $ret && Modifikation::speichere(4, $ta_id, $rikscha_id, $bbb_gebraucht_ganz);
 		}
 		if ($bbb_defekt_mit_depot) {
 			$ret = $ret && Modifikation::speichere(5, $ta_id, $rikscha_id, $bbb_defekt_mit_depot);
@@ -438,19 +438,19 @@ class Rikscha extends MY_Controller {
 		foreach ($bestand as $row) {
 			switch ($row->ware_id) {
 				case 3:
-					$tk_dreckig_ganz = $row->anzahl;
+					$tk_gebraucht_ganz = $row->anzahl;
 					break;
 				case 4:
-					$bbb_dreckig_ganz = $row->anzahl;
+					$bbb_gebraucht_ganz = $row->anzahl;
 					break;
 				default:
 					// Andere Ware interessiert hier nicht.
 			}
 		}
-		$tk_dreckig_ganz = isset($tk_dreckig_ganz) ? $tk_dreckig_ganz : '';
-		$bbb_dreckig_ganz = isset($bbb_dreckig_ganz) ? $bbb_dreckig_ganz : '';
-		$this->addData('tk_dreckig_ganz', $tk_dreckig_ganz);
-		$this->addData('bbb_dreckig_ganz', $bbb_dreckig_ganz);
+		$tk_gebraucht_ganz = isset($tk_gebraucht_ganz) ? $tk_gebraucht_ganz : '';
+		$bbb_gebraucht_ganz = isset($bbb_gebraucht_ganz) ? $bbb_gebraucht_ganz : '';
+		$this->addData('tk_gebraucht_ganz', $tk_gebraucht_ganz);
+		$this->addData('bbb_gebraucht_ganz', $bbb_gebraucht_ganz);
 		
 		$this->load->view('rikscha/mw_logistik', $this->data);
 		return ;
@@ -480,7 +480,7 @@ class Rikscha extends MY_Controller {
 						'rules'   => 'is_natural'
 				),
 				array(
-						'field'   => 'tk_dreckig_ganz',
+						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
 						'rules'   => 'is_natural'
 				),
@@ -496,8 +496,8 @@ class Rikscha extends MY_Controller {
 		$mwl_id = $this->input->post('mwl_id');
 		$tk_sauber_bringt = $this->input->post('tk_sauber_bringt');
 		$bbb_sauber_bringt = $this->input->post('bbb_sauber_bringt');
-		$tk_dreckig_ganz = $this->input->post('tk_dreckig_ganz');
-		$bbb_dreckig_ganz = $this->input->post('bbb_dreckig_ganz');
+		$tk_gebraucht_ganz = $this->input->post('tk_gebraucht_ganz');
+		$bbb_gebraucht_ganz = $this->input->post('bbb_gebraucht_ganz');
 		
 		$mwl = new Firma();
 		$mwl->find($mwl_id);
@@ -506,8 +506,8 @@ class Rikscha extends MY_Controller {
 		$this->addData('mwl', $mwl);
 		$this->addData('tk_sauber_bringt', $tk_sauber_bringt);
 		$this->addData('bbb_sauber_bringt', $bbb_sauber_bringt);
-		$this->addData('tk_dreckig_ganz', $tk_dreckig_ganz);
-		$this->addData('bbb_dreckig_ganz', $bbb_dreckig_ganz);
+		$this->addData('tk_gebraucht_ganz', $tk_gebraucht_ganz);
+		$this->addData('bbb_gebraucht_ganz', $bbb_gebraucht_ganz);
 		$this->load->view('rikscha/mw_logistik_confirm', $this->data);
 		
 		return;
@@ -543,7 +543,7 @@ class Rikscha extends MY_Controller {
 						'rules'   => 'is_natural'
 				),
 				array(
-						'field'   => 'tk_dreckig_ganz',
+						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
 						'rules'   => 'is_natural'
 				),
@@ -564,8 +564,8 @@ class Rikscha extends MY_Controller {
 		$mwl_id = $this->input->post('mwl_id');
 		$tk_sauber_bringt = $this->input->post('tk_sauber_bringt');
 		$bbb_sauber_bringt = $this->input->post('bbb_sauber_bringt');
-		$tk_dreckig_ganz = $this->input->post('tk_dreckig_ganz');
-		$bbb_dreckig_ganz = $this->input->post('bbb_dreckig_ganz');
+		$tk_gebraucht_ganz = $this->input->post('tk_gebraucht_ganz');
+		$bbb_gebraucht_ganz = $this->input->post('bbb_gebraucht_ganz');
 		
 		// Modifikationen (Bestand wird von der Modifikation erledigt)
 		if ($tk_sauber_bringt) {
@@ -574,11 +574,11 @@ class Rikscha extends MY_Controller {
 		if ($bbb_sauber_bringt) {
 			$ret = $ret && Modifikation::speichere(2, $mwl_id, $lager_id, $bbb_sauber_bringt);
 		}
-		if ($tk_dreckig_ganz) {
-			$ret = $ret && Modifikation::speichere(3, $lager_id, $mwl_id, $tk_dreckig_ganz);
+		if ($tk_gebraucht_ganz) {
+			$ret = $ret && Modifikation::speichere(3, $lager_id, $mwl_id, $tk_gebraucht_ganz);
 		}
-		if ($bbb_dreckig_ganz) {
-			$ret = $ret && Modifikation::speichere(4, $lager_id, $mwl_id, $bbb_dreckig_ganz);
+		if ($bbb_gebraucht_ganz) {
+			$ret = $ret && Modifikation::speichere(4, $lager_id, $mwl_id, $bbb_gebraucht_ganz);
 		}
 		
 		if ($ret) {

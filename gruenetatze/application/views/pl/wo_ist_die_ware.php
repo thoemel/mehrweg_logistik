@@ -35,17 +35,17 @@ echo '
 		</tr>
 		<tr>
 			<th scope="row">TK gebraucht</th>
-			<td>' . $ware['TK dreckig']['Takeaway'] . '</td>
-			<td>' . $ware['TK dreckig']['MW-Logistik'] . '</td>
-			<td>' . $ware['TK dreckig']['Lager'] . '</td>
-			<td>' . $ware['TK dreckig']['Rikscha'] . '</td>
+			<td>' . $ware['TK gebraucht']['Takeaway'] . '</td>
+			<td>' . $ware['TK gebraucht']['MW-Logistik'] . '</td>
+			<td>' . $ware['TK gebraucht']['Lager'] . '</td>
+			<td>' . $ware['TK gebraucht']['Rikscha'] . '</td>
 		</tr>
 		<tr>
 			<th scope="row">BBB gebraucht</th>
-			<td>' . $ware['BBB dreckig']['Takeaway'] . '</td>
-			<td>' . $ware['BBB dreckig']['MW-Logistik'] . '</td>
-			<td>' . $ware['BBB dreckig']['Lager'] . '</td>
-			<td>' . $ware['BBB dreckig']['Rikscha'] . '</td>
+			<td>' . $ware['BBB gebraucht']['Takeaway'] . '</td>
+			<td>' . $ware['BBB gebraucht']['MW-Logistik'] . '</td>
+			<td>' . $ware['BBB gebraucht']['Lager'] . '</td>
+			<td>' . $ware['BBB gebraucht']['Rikscha'] . '</td>
 		</tr>
 		<tr>
 			<th scope="row">Depotkarten</th>

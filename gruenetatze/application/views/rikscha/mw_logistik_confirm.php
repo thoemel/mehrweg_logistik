@@ -23,11 +23,11 @@ echo '
 		<h2>Rikscha Kurier gibt</h2>
 		<ul class="list-group">
 			<li class="list-group-item">
-				<span class="badge">' . $tk_dreckig_ganz . '</span>
+				<span class="badge">' . $tk_gebraucht_ganz . '</span>
 				Transportkisten gebraucht
 			</li>
 			<li class="list-group-item">
-				<span class="badge">' . $bbb_dreckig_ganz . '</span>
+				<span class="badge">' . $bbb_gebraucht_ganz . '</span>
 				Bring Back Boxen gebraucht
 			</li>
 		</ul>
@@ -46,8 +46,8 @@ echo form_open_multipart('rikscha/mw_logistik_speichern',
 echo form_hidden('mwl_id', $mwl->id);
 echo form_hidden('tk_sauber_bringt', $tk_sauber_bringt);
 echo form_hidden('bbb_sauber_bringt', $bbb_sauber_bringt);
-echo form_hidden('tk_dreckig_ganz', $tk_dreckig_ganz);
-echo form_hidden('bbb_dreckig_ganz', $bbb_dreckig_ganz);
+echo form_hidden('tk_gebraucht_ganz', $tk_gebraucht_ganz);
+echo form_hidden('bbb_gebraucht_ganz', $bbb_gebraucht_ganz);
 echo '
 	<div class="form-group">
 		<div class="col-lg-offset-2 col-lg-10">

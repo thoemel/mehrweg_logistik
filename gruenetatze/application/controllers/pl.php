@@ -215,12 +215,12 @@ class Pl extends MY_Controller {
 				'MW-Logistik'	=> '-',
 				'Lager'			=> '-'
 			),
-			'TK dreckig' => array(
+			'TK gebraucht' => array(
 				'Takeaway'		=> '-',
 				'MW-Logistik'	=> '-',
 				'Lager'			=> '-'
 			),
-			'BBB dreckig' => array(
+			'BBB gebraucht' => array(
 				'Takeaway'		=> '-',
 				'MW-Logistik'	=> '-',
 				'Lager'			=> '-'
