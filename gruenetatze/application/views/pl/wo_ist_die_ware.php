@@ -14,8 +14,8 @@ echo '
 			<th scope="col"></th>
 			<th scope="col">Takeaway</th>
 			<th scope="col">MW-Logistik</th>
-			<th scope="col">Rikscha-Lager</th>
-			<th scope="col">Rikscha-Fahrz.</th>
+			<th scope="col">Zwischenlager</th>
+			<th scope="col">Rikscha (Fahrz.)</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -55,8 +55,6 @@ echo '
 			<td>' . $ware['Depotkarte']['Rikscha'] . '</td>
 		</tr>
 	</tbody>
-	</table>
-					
-<pre>'.print_r($ware, true).'</pre>';
+	</table>';
 
 include APPPATH . 'views/footer.php';
