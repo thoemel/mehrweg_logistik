@@ -1,11 +1,21 @@
-// provision
-var provision = 0;
+
 
 $(document).ready(function() {
 	
 	// Das letzte Formularfeld mit Klasse "focusPlease" auf der Seite kriegt den Fokus.
 	$('.focusPlease').last().focus();
 
+	// Datepicker defaults
+	$.datepicker.setDefaults({
+		maxDate: new Date(),
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+        changeYear: true,
+        duration: 'fast',
+        hideIfNoPrevNext: true,
+        showOn: 'focus',
+    });
+	
 	// Datepicker auf default-Feldern
 	$('.hat-dp').datepicker();
 	
