@@ -364,7 +364,7 @@ class Rikscha extends MY_Controller {
 		// String in Bild umwandeln
 		$picture = base64_decode($unterschrift);
 		// Pfad/Dateinamen festlegen
-		$file = FCPATH . 'uploads/unterschrift_' . microtime(true) . '.png';
+		$file = FCPATH . 'uploads/unterschrift_' . $ta_id . '_' . date('YmdHis') . '.png';
 		// Bilddaten in Datei schreiben
 		$return = file_put_contents($file, $picture);
 		if( !$return ) {
