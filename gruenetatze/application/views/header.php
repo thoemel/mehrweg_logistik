@@ -12,6 +12,13 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<link rel="icon" href="<?php echo base_url();?>" type="image/x-icon"> 
+	<link rel="apple-touch-icon" href="<?php echo base_url();?>apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo base_url();?>apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo base_url();?>apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo base_url();?>apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>apple-touch-icon-precomposed.png"/>
+	
 <?php 
 $min = ('dev' == substr($_SERVER['SERVER_NAME'], 0, 3)) ? '' : '.min';
 echo '
