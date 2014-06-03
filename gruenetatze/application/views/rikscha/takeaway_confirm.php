@@ -3,7 +3,7 @@ include APPPATH . 'views/header.php';
 
 echo '
 
-<div class="page-header">
+<div class="row">
 	<h1>Rikscha bei ' . $ta->name . '</h1>
 </div>
 				
@@ -57,7 +57,9 @@ echo '
 
 echo '
 <div class="row">
-	<h2>Bestätigung</h2>
+	<div class="col-xs-6">
+		<h2>Bestätigung</h2>
+	</div>
 </div>';
 echo form_open_multipart('rikscha/takeaway_speichern', 
 		array('id' => 'rikscha_takeaway_confirm', 
@@ -75,19 +77,13 @@ echo form_hidden('tk_defekt', $tk_defekt);
 echo form_hidden('depotkarten_holt', $depotkarten_holt);
 echo '<input type="hidden" name="unterschrift" id="hidden_unterschrift">';
 echo '
-	<div class="form-group">
-		<div class="col-xs-4">
-			<button type="button" class="btn btn-warning clearCanvas">Unterschrift neu</button>
-		</div>
-	</div>
 	<div class="row">
 		<!-- Width und height müssen mit den Werten im CSS übereinstimmen! -->
 		<canvas id="unterschrift" class="unterschrift" width="600" height="200"></canvas>
 	</div>
 	<div class="form-group">
-		<div class="col-xs-4">
 			<button type="submit" class="btn btn-success mit_unterschrift">Bestätigen</button>
-		</div>
+			<button type="button" class="col-sm-offset-4 btn btn-warning clearCanvas">Unterschrift neu</button>
 	</div>
 
 </form>
