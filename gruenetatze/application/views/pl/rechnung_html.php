@@ -58,11 +58,18 @@ if (!empty($abrechnung_ids)) {
 	<div class="row">
 		<h2>Bisherige Rechnungen</h2>
 		<ul class="list-group col-sm-6">';
+	$erste = true;
 	foreach ($abrechnung_ids as $abrechnung_id => $row) {
 		echo '
 				<li class="list-group-item">
 					<span class="badge">' . anchor('pl/rechnung_fuer/' . $firma->firma_id . '/csv/' . $abrechnung_id, 'CSV') . '</span>
-					<span class="badge">' . anchor('pl/rechnung_fuer/' . $firma->firma_id . '/html/' . $abrechnung_id . '#details', 'HTML') . '</span>
+					<span class="badge">' . anchor('pl/rechnung_fuer/' . $firma->firma_id . '/html/' . $abrechnung_id . '#details', 'HTML') . '</span>';
+		if ($erste) {
+			echo '
+					<span class="badge alert-warning">' . anchor('pl/rechnung_loeschen/' . $firma->firma_id . '/' . $abrechnung_id, 'löschen', array('id'=>'rechnung_loeschen')) . '</span>';
+			$erste = false;
+		}
+		echo '
 					' . $row->datum_von . '&nbsp;-&nbsp;' . $row->datum_bis . '
 				</li>';
 	}
@@ -72,7 +79,7 @@ if (!empty($abrechnung_ids)) {
 } // End if Rechnungen
 
 
-if (!empty($abrechnung_ids)) {
+if (NULL != $rechnung->datum_von) {
 	echo '
 	<a name="details"></a>
 	<div class="row">

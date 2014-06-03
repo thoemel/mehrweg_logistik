@@ -149,6 +149,23 @@ class Pl extends MY_Controller {
 	
 	
 	/**
+	 * Löscht eine Rechnung
+	 * @param int	$firma_id
+	 * @param int	$abrechnung_id
+	 */
+	public function rechnung_loeschen($firma_id, $abrechnung_id)
+	{
+		// TODO Vielleicht noch Input prüfen?
+		if (Rechnung::loesche($abrechnung_id)) {
+			$this->session->set_flashdata('success', 'Rechnung gelöscht');
+		} else {
+			$this->session->set_flashdata('error', 'Rechnung konnte nicht gelöscht werden.');
+		}
+		redirect('pl/rechnung_fuer/'.$firma_id);
+	}
+	
+	
+	/**
 	 * Erstelle eine Rechnung für eine neue Periode und zeige ihre Details an.
 	 * 
 	 * @uses $this->rechnung_fuer()

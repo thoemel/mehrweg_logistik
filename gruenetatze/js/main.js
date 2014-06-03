@@ -27,5 +27,34 @@ $(document).ready(function() {
 	$('form').on('submit', function() {
 		$('#confirmation').show();
 	});
+	
+	// Rechnung löschen bestätigen
+	$('#rechnung_loeschen').on('click', rechnung_loeschen_bestaetigen);
 });
  
+
+/**
+ * Zeigt einen Modal-Dialog, um das Löschen einer Rechnung zu bestätigen
+ * @param event
+ */
+function rechnung_loeschen_bestaetigen(event) {
+	event.preventDefault();
+	$('<div></div>').appendTo('body')
+	  .html('<div><p>Wirklich löschen?</p></div>')
+	  .dialog({
+	      modal: true, title: 'Rechnung löschen', zIndex: 10000, autoOpen: true,
+	      width: '200px', resizable: false,
+	      buttons: {
+	          Ja: function () {
+	        	  location.assign($('#rechnung_loeschen').attr('href'));
+	              $(this).dialog("close");
+	          },
+	          Nein: function () {
+	              $(this).dialog("close");
+	          }
+	      },
+	      close: function (event, ui) {
+	          $(this).remove();
+	      }
+	});
+}

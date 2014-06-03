@@ -272,6 +272,19 @@ class Rechnung extends CI_Model {
 	
 	
 	/**
+	 * Lösche eine bestehende Rechnung
+	 * @param	int	$abrechnung_id
+	 * @return	boolean				True, falls der DB-Befehl erfolgreich.
+	 */
+	public static function loesche($abrechnung_id)
+	{
+		$CI =& get_instance();
+		$CI->db->where('abrechnung_id', $abrechnung_id);
+		return $CI->db->delete('abrechnung');
+	}
+	
+	
+	/**
 	 * Eine Modifikation speichern
 	 * 
 	 * @return bool
