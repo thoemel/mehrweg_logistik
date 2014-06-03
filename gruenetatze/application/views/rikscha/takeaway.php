@@ -23,7 +23,12 @@ echo '
 	<div class="form-group">
 		<label for="tk_sauber_bringt" class="col-sm-5 control-label">Transportkisten sauber</label>
 		<div class="col-sm-2">
-			<input type="number" id="tk_sauber_bringt" name="tk_sauber_bringt" value="'.set_value("tk_sauber_bringt").'" class="focusPlease form-control"
+			' . form_input(array(
+					'id' => 'tk_sauber_bringt', 
+					'name' => 'tk_sauber_bringt', 
+					'value' => set_value('tk_sauber_bringt'), 
+					'class' => 'form-control', 
+					'type' => 'number')) . '
 		</div>
 	</div>
 	<div class="form-group">
