@@ -112,7 +112,7 @@ class Pl extends MY_Controller {
 		$abrechnung_ids = Rechnung::ids_fuer_firma($firma_id);
 		if (!empty($abrechnung_ids)) {
 			$dt_tmp = new DateTime(reset($abrechnung_ids)->datum_bis);
-			$letzte_rechnung_datum_bis = $dt_tmp->add(DateInterval::createFromDateString('+1 Day'))->format('Y-m-d');
+			$letzte_rechnung_datum_bis = $dt_tmp->format('Y-m-d');
 		} else {
 			$letzte_rechnung_datum_bis = '';
 		}

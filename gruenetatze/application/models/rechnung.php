@@ -219,13 +219,16 @@ class Rechnung extends CI_Model {
 			return;
 		}
 		
-		// Beginn der Periode herausfinden (Tag nach Ende der letzten)
+		/*
+		 * Beginn der Periode herausfinden. Ist gleiches Datum, wie Enddatum 
+		 * der letzten Periode, weil die gebrachten Waren dort nicht berücksichtigt
+		 * worden sind.
+		 */
 		$this->db->where('firma_id', $firma_id);
 		$this->db->order_by('datum_von', 'desc');
 		$query = $this->db->get('abrechnung', 1);
 		if (1 == $query->num_rows()) {
 			$dt = new DateTime($query->row()->datum_bis);
-			$dt->add(DateInterval::createFromDateString('1 day'));
 			$this->datum_von = $dt->format('Y-m-d');
 		} else {
 			// Noch keine Rechnung in der DB -> suche erste Modifikation der Firma
