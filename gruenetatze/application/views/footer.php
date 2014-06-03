@@ -4,7 +4,12 @@
 
 <footer>
 	<div class="container hidden-print">
-<?php echo anchor('', '_\|/_', array('title'=>'Start')); ?>
+		<span class="col-xs-2">
+			<?php echo anchor('', '_\|/_', array('title'=>'Start')); ?>
+		</span>
+		<span class="col-xs-6 col-xs-offset-2">
+			Notfall-Telefon: <a href="tel:+41786045998">078 604 59 98</a>
+		</span>
 	</div>
 </footer>
 
