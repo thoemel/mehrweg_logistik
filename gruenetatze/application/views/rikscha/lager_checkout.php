@@ -17,7 +17,7 @@ echo form_open_multipart('rikscha/lager_checkout_speichern',
 
 echo '
 	<div class="form-group">
-		<label for="tk_sauber_voll" class="col-sm-2 control-label">Transportkisten sauber</label>
+		<label for="tk_sauber_voll" class="col-sm-4 control-label">Transportkisten sauber</label>
 		<div class="col-sm-2">
 			' . form_input(array(
 					'id' => 'tk', 
@@ -28,7 +28,7 @@ echo '
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="bbb" class="col-sm-2 control-label">Bring Back Boxen sauber</label>
+		<label for="bbb" class="col-sm-4 control-label">Bring Back Boxen sauber</label>
 		<div class="col-sm-2">
 			' . form_input(array(
 					'id' => 'bbb', 
@@ -39,7 +39,7 @@ echo '
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="depotkarten" class="col-sm-2 control-label">Depotkarten</label>
+		<label for="depotkarten" class="col-sm-4 control-label">Depotkarten</label>
 		<div class="col-sm-2">
 			' . form_input(array(
 					'id' => 'depotkarten', 
@@ -50,7 +50,7 @@ echo '
 		</div>
 	</div>
 	<div class="form-group">
-		<div class="col-lg-offset-2 col-lg-10">
+		<div class="col-sm-offset-4 col-sm-6">
 			<button type="submit" class="btn btn-default">Speichern</button>
 		</div>
 	</div>
