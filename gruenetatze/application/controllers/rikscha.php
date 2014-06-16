@@ -137,13 +137,13 @@ class Rikscha extends MY_Controller {
 		$depotkarten = $this->input->post('depotkarten');
 		
 		// Modifikationen
-		if (0 < $tk) {
+		if (0 != $tk) {
 			$ret = $ret & Modifikation::speichere(1, $lager_id, $rikscha_id, $tk);
 		}
-		if (0 < $bbb) {
+		if (0 != $bbb) {
 			$ret = $ret & Modifikation::speichere(2, $lager_id, $rikscha_id, $bbb);
 		}
-		if (0 < $depotkarten) {
+		if (0 != $depotkarten) {
 			$ret = $ret & Modifikation::speichere(8, $lager_id, $rikscha_id, $depotkarten);
 		}
 
