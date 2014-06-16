@@ -111,17 +111,17 @@ class Rikscha extends MY_Controller {
 				array(
 						'field'   => 'tk',
 						'label'   => 'Transportkisten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb',
 						'label'   => 'Bring Back Boxen',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'depotkarten',
 						'label'   => 'Depotkarten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 		);
 		
@@ -194,42 +194,42 @@ class Rikscha extends MY_Controller {
 				array(
 						'field'   => 'tk_sauber_bringt',
 						'label'   => 'Transportkisten sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'depotkarten_bringt',
 						'label'   => 'Depotkarten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_sauber_bringt',
 						'label'   => 'Bring Back Boxen sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_defekt_mit_depot',
 						'label'   => 'Bring Back Boxen defekt mit Depotrückgabe',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_defekt_ohne_depot',
 						'label'   => 'Bring Back Boxen defekt ohne Depotrückgabe',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'tk_defekt',
 						'label'   => 'Transportkisten defekt',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'depotkarten_holt',
 						'label'   => 'Depotkarten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 		);
 
@@ -292,42 +292,42 @@ class Rikscha extends MY_Controller {
 				array(
 						'field'   => 'tk_sauber_bringt',
 						'label'   => 'Transportkisten sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_sauber_bringt',
 						'label'   => 'Bring Back Boxen sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'depotkarten_bringt',
 						'label'   => 'Depotkarten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_defekt_mit_depot',
 						'label'   => 'Bring Back Boxen defekt mit Depotrückgabe',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_defekt_ohne_depot',
 						'label'   => 'Bring Back Boxen defekt ohne Depotrückgabe',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'tk_defekt',
 						'label'   => 'Transportkisten defekt',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'depotkarten_holt',
 						'label'   => 'Depotkarten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'unterschrift',
@@ -472,17 +472,17 @@ class Rikscha extends MY_Controller {
 				array(
 						'field'   => 'tk_sauber_bringt',
 						'label'   => 'Transportkisten sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_sauber_bringt',
 						'label'   => 'Bring Back Boxen sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 		);
 
@@ -535,17 +535,17 @@ class Rikscha extends MY_Controller {
 				array(
 						'field'   => 'tk_sauber_bringt',
 						'label'   => 'Transportkisten sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb_sauber_bringt',
 						'label'   => 'Bring Back Boxen sauber',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'tk_gebraucht_ganz',
 						'label'   => 'Transportkisten gebraucht',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bestaetigung',

@@ -42,17 +42,17 @@ class Pl extends MY_Controller {
 				array(
 						'field'   => 'tk',
 						'label'   => 'Transportkisten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'bbb',
 						'label'   => 'Bring Back Boxen',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 				array(
 						'field'   => 'depotkarten',
 						'label'   => 'Depotkarten',
-						'rules'   => 'is_natural'
+						'rules'   => 'integer'
 				),
 		);
 		$this->form_validation->set_rules($config);
@@ -177,7 +177,7 @@ class Pl extends MY_Controller {
 				array(
 						'field'   => 'firma_id',
 						'label'   => 'Firma',
-						'rules'   => 'is_natural|required'
+						'rules'   => 'is_natural_no_zero|required'
 				),
 				array(
 						'field'   => 'datum_bis',
