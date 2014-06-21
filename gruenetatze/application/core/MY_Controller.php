@@ -78,6 +78,7 @@ class MY_Controller extends CI_Controller {
 					'rikscha/takeaway' 			=> 'Takeaway',
 					'rikscha/lager_checkin'		=> 'Checkin',
 					'rikscha/mw_logistik'		=> 'MW-Logistik',
+					'pl/wo_ist_die_ware'		=> 'Wo&nbsp;ist&nbsp;die&nbsp;Ware?',
 					'login/logout'				=> 'Logout',
 				);
 				break;
